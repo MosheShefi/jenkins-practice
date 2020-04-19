@@ -2,24 +2,15 @@ pipeline {
     agent any
     tools {nodejs "nodejs"}
     stages {
-        stage('---echo path---') {
-            steps {
-                sh "echo $PATH"
-            }
-        }
-        stage('---change directory---') {
+        stage('---build---') {
             steps {
                 sh script:'''
                     #!/bin/bash
                     cd ./hs-ensemble-mon
+                    ls
+                    npm install
+                    npm run ng -- build
                     '''
-                sh "ls"
-            }
-        }
-        stage('---build') {
-            steps {
-                sh "npm install"
-                sh "npm run ng -- build"
             }
         }
     }
