@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh "cd hs-ensemble-mon"
                 sh "npm install"
-                sh "ng build"
+                sh "npm run ng -- build"
             }
         }
     }
