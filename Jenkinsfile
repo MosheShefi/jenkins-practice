@@ -9,7 +9,10 @@ pipeline {
         }
         stage('---change directory---') {
             steps {
-                sh 'cd "/Users/mshefi/.jenkins/workspace/My Pipeline/hs-ensemble-mon"'
+                sh script:'''
+                    #!/bin/bash
+                    cd ./hs-ensemble-mon
+                    '''
                 sh "ls"
             }
         }
