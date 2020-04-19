@@ -7,12 +7,15 @@ pipeline {
                 sh "echo $PATH"
             }
         }
-        stage('---build---') {
+        stage('---change directory---') {
             steps {
                 sh "cd hs-ensemble-mon"
-                sh "npm install"
-                sh "npm run ng -- build"
+                sh "ls"
             }
+        }
+        stage('---build') {
+            sh "npm install"
+            sh "npm run ng -- build"
         }
     }
 }
