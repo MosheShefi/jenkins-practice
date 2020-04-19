@@ -8,11 +8,6 @@ pipeline {
                 sh "npm install"
                 sh "ng build"
             }
-        },
-        stage('---test---') {
-            steps {
-                sh 'echo "test"'
-            }
         }
     }
 }
